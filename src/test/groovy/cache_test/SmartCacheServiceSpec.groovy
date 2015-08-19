@@ -1,5 +1,6 @@
 package cache_test
 
+import com.SmartCacheService
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

@@ -4,3 +4,9 @@
 build
 classes
 gradle
+*.iml
+
+gradlew
+gradlew.bat
+prodDb.h2.db
+prodDb.lock.db

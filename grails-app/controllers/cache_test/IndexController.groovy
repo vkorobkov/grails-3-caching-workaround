@@ -1,6 +1,6 @@
 package cache_test
 
-import grails.plugin.cache.Cacheable
+import com.SmartCacheService
 import groovy.transform.CompileStatic
 import org.springframework.beans.factory.annotation.Autowired
 
@@ -8,22 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired
 class IndexController {
 
     @Autowired
-    SmartCacheService cacheService;
+    SmartCacheService smartCacheService;
 
     def index() {
-        cacheService.doWithDogsCache("Sit", {
+        smartCacheService.doWithDogsCache("Sit", {
             System.err.println("The dog sat down")
         } )
 
-        cacheService.doWithDogsCache("Die", {
+        smartCacheService.doWithDogsCache("Die", {
             System.err.println("The dog is dead")
         } )
 
-        cacheService.doWithCatsCache("Sit", {
+        smartCacheService.doWithCatsCache("Sit", {
             System.err.println("The cat sat down")
         } )
 
-        cacheService.doWithCatsCache("Die", {
+        smartCacheService.doWithCatsCache("Die", {
             System.err.println("The cat is dead")
         } )
 
@@ -31,13 +31,13 @@ class IndexController {
     }
 
     def dogs() {
-        cacheService.evictDogsCache()
+        smartCacheService.evictDogsCache()
 
         render "Dogs cache evicted"
     }
 
     def cats() {
-        cacheService.evictCatsCache()
+        smartCacheService.evictCatsCache()
 
         render "Cats cache evicted"
     }
