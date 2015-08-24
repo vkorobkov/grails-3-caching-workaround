@@ -7,7 +7,7 @@
 
     <cache:annotation-driven cache-manager="cacheManager" />
 
-    <bean name="smartCacheService" class="com.SmartCacheService" scope="singleton" />
+    <bean name="smartCacheService" class="com.SpringCacheService" scope="singleton" />
 
     <bean id="cacheManager"
           class="org.springframework.cache.ehcache.EhCacheCacheManager">
